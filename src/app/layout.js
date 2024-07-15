@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           <NavBar />
         </header>
         {children}
-        <footer className="mb-0 mt-5">
+        <footer className="mb-0" style={{marginTop:200}}>
           <Footer />
           <p className="text-center vw-100 fs-5 mt-5">
             ----- Made with <span className="heart"> ❤️</span> by Abdul Samad
