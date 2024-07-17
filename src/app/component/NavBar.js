@@ -28,7 +28,7 @@ const NavBar = () => {
   };
 	useEffect(() => {
 		document.getElementById(pathname).classList.add('active-navbar-nav')
-	}, [])
+	}, [pathname])
 	
 
   return (
