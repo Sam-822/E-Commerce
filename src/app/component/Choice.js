@@ -10,7 +10,7 @@ const Choice = () => {
           style={{ width: "20%", height: "250px" }}
         >
           <div className="bg-body-secondary qualities-item">
-            <i class="bi bi-truck fs-1"></i>
+            <i className="bi bi-truck fs-1"></i>
           </div>
           <p className="fs-4 mt-3 mb-0">Free Shipping</p>
           <p>
@@ -22,7 +22,7 @@ const Choice = () => {
           style={{ width: "20%", height: "250px" }}
         >
           <div className="bg-body-secondary qualities-item">
-            <i class="bi bi-wallet2 fs-1"></i>
+            <i className="bi bi-wallet2 fs-1"></i>
           </div>
           <p className="fs-4 mt-3 mb-0">Easy Payments</p>
           <p>
@@ -34,7 +34,7 @@ const Choice = () => {
           style={{ width: "20%", height: "250px" }}
         >
           <div className="bg-body-secondary qualities-item">
-            <i class="bi bi-shield-shaded fs-1"></i>
+            <i className="bi bi-shield-shaded fs-1"></i>
           </div>
           <p className="fs-4 mt-3 mb-0">Money-Back Guarantee</p>
           <p>
@@ -46,7 +46,7 @@ const Choice = () => {
           style={{ width: "20%", height: "250px" }}
         >
           <div className="bg-body-secondary qualities-item">
-            <i class="bi bi-brilliance fs-1"></i>
+            <i className="bi bi-brilliance fs-1"></i>
           </div>
           <p className="fs-4 mt-3 mb-0">Finest Quality</p>
           <p>

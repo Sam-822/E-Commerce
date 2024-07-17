@@ -118,3 +118,26 @@ footer {
 .footer-icons:hover{
 	color: black !important;
 }
+
+
+body{
+	transition-property: opacity, transform, filter, background;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
+}
+
+.page-transition{
+	opacity: 0;
+	background: #111;
+	transform: translateY(80px);
+	filter: blur(20px);
+}
+
+.navbar-nav{
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.active-navbar-nav{
+	background-color: #ddd;
+}
