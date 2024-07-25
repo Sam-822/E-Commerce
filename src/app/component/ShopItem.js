@@ -1,7 +1,8 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ShopItem = (props) => {
+  const { itemElement } = props;
   const [modalData, setModalData] = useState({
     id: 1,
     title: "...",
@@ -16,11 +17,14 @@ const ShopItem = (props) => {
     const parsedData = await data.json();
     setModalData(parsedData);
   };
-  const { itemElement } = props;
+  useEffect(() => {
+    fetchModalData(itemElement.id);
+  }, []);
+
   return (
     <>
       <div
-        className="card mx-3 mb-3 h-fit-content"
+        className="card mx-3 mb-3"
         key={itemElement.id}
         style={{ width: "18rem" }}
       >
@@ -29,19 +33,24 @@ const ShopItem = (props) => {
           width={0}
           height={0}
           sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
-					alt={itemElement.title}
-					priority={true}
+          style={{
+            height: "auto",
+            width: "18rem"
+          }}
+          alt={itemElement.title}
+          priority={true}
         />
-        <div className="card-body">
-          <div className="card-title fs-5">{itemElement.title}</div>
-          <div className="card-title fs-4 fw-bold">${itemElement.price}</div>
-          <div className="card-text">
-            {itemElement.description.slice(0, 100)}...
+        <div className="card-body d-flex flex-column justify-content-between ">
+          <div>
+            <div className="card-title fs-5 text-truncate ">{itemElement.title}</div>
+            <div className="card-title fs-4 fw-bold">${itemElement.price}</div>
+            <div className="card-text text-truncate">
+              {itemElement.description}
+            </div>
           </div>
           <button
             type="button"
-            className="btn btn-primary stretched-link"
+            className="btn btn-primary mt-4 stretched-link"
             data-bs-toggle="modal"
             data-bs-target={`#exampleModal-${itemElement.id}`}
             onClick={() => {
@@ -57,7 +66,7 @@ const ShopItem = (props) => {
         id={`exampleModal-${itemElement.id}`}
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
+        aria-hidden="false"
       >
         <div className="modal-dialog">
           <div className="modal-content">
@@ -79,12 +88,12 @@ const ShopItem = (props) => {
                 height={0}
                 sizes="100vw"
                 style={{ height: "250px", width: "auto" }}
-								alt={itemElement.title}
+                alt={itemElement.title}
               />
             </div>
             <div className="modal-body  fw-bold">Price: ${modalData.price}</div>
             <div className="modal-body">
-              Category:{" "}
+              Category:
               {modalData.category.charAt(0).toUpperCase() +
                 modalData.category.slice(1)}
             </div>
