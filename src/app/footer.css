@@ -1,0 +1,86 @@
+#footer {
+  background-image: linear-gradient(320deg, #324773 10%, #111827);
+  height: 200px;
+}
+
+.footer-container {
+  height: 250px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.cube-container {
+  perspective: 1000px;
+}
+
+.cube {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transform-style: preserve-3d;
+  /* transform: rotateX(30deg) rotateY(50deg); */
+  animation: rotateCube 10s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(255, 255, 255, 0.8); */
+  /* border: 1px solid #6a6a6a; */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.front {
+  transform: translateZ(20px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(20px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(20px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(20px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(20px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(20px);
+}
+
+@keyframes rotateCube {
+  from {
+    transform: rotateX(0) rotateY(0);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+#footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-crimson {
+  font-weight: 600;
+  color: crimson !important;
+}
+
+.footer-links {
+  text-decoration: underline dotted;
+  cursor: pointer;
+}
+
+.footer-links:hover {
+  text-decoration: underline;
+}
